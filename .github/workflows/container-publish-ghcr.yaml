@@ -12,6 +12,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch: # This enables the manual trigger
+    inputs:
+      reason:
+        description: 'Reason for manual build'
+        required: false
+        default: 'Manual trigger'
 
 env:
   REGISTRY: ghcr.io
